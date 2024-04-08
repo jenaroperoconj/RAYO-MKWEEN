@@ -3,42 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <title>Taller Rayo Mcween</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="menu">
-        <ul>
+	<!--Menu-->
+    <div class="menu">	
+        <ul>			
             <li><img src="images/rayo_logo.jpeg" alt="Rayo Logo"></li>
-            <li><a href="atenciones.html" aria-label="Ver el historial de atenciones">Atenciones</a></li>
-            <li><a href="rev.atenciones.html" aria-label="Enlace para aprobar o rechazar atenciones">Revisar atenciones</a></li>
-            <li><a href="carrito.html" aria-label="Ingresa al carrito de compras">Carrito de compras</a></li>
-            <li><a href="index.html">Logout</a></li>
+            <li><a href="#" class="link">Atenciones</a></li>
+			<li><a href="#" class="link">Revisar atenciones</a></li>
+			<li><a href="#" class="link">Carrito de compras</a></li>
+			<li><a href="index.html" class="link">Logout</a></li>
         </ul>
     </div>
-	<main>
-		<!--Elemento principal de la página-->
-		<div class="carrusel">
-			<img src="images/jackson_storm_car.jpeg" alt="Foto 1">
-			<img src="images/mcweencar.jpeg" alt="Foto 2">
-			<img src="images/el_sheriff_car.jpeg" alt="Foto 3">
-			<img src="images/jackson_storm_car.jpeg" alt="Foto 1">
-			<img src="images/mcweencar.jpeg" alt="Foto 2">
-			<img src="images/el_sheriff_car.jpeg" alt="Foto 3">
-			<img src="images/jackson_storm_car.jpeg" alt="Foto 1">
-			<img src="images/mcweencar.jpeg" alt="Foto 2">
-			<img src="images/el_sheriff_car.jpeg" alt="Foto 3">
-			<img src="images/jackson_storm_car.jpeg" alt="Foto 1">
-			<img src="images/mcweencar.jpeg" alt="Foto 2">
-			<img src="images/el_sheriff_car.jpeg" alt="Foto 3">
-		</div>
-	</main>
+	<!--Menu-->
+        
+	
+	<hr class="featurette-divider">
 
-	<footer>
-		<!--Pie de la página (Datos contacto)-->
-		<div>
-			<a href="mailto:jen.marin@duocuc.cl" download>Enviar Mail</a>
-		</div>
-    </footer>
+
+		<!--Carrusel-->
+        <section class="fotos container-carru">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <a href="#"><img src="images/el_sheriff_car.jpeg" alt=""></a> 
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#"><img src="images/jackson_storm_car.jpeg" alt=""></a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#"><img src="images/mcweencar.jpeg" alt=""></a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#"><img src="images/mcweencar2jpeg.jpeg" alt=""></a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#"><img src="images/el_sheriff_car.jpeg" alt=""></a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#"><img src="images/jackson_storm_car.jpeg" alt=""></a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#"><img src="images/mcweencar2jpeg.jpeg" alt=""></a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+		<!--Carrusel-->
+
+		
+
+
+
+	<!--Script para Carrusel-->
+	<script type="module">
+		import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+	  
+		var swiper = new Swiper(".mySwiper", {
+		  effect: "coverflow",
+		  grabCursor: true,
+		  centeredSlides:true,
+		  slidesPerView: "auto",
+		  loop: true,
+		  coverflowEffect: {
+			  depth: 100,
+			  modifier: 3.5,
+			  rotate: 0,
+			  strech: 0,
+			  slideShadows: true,
+			  },
+			  
+		  });
+	</script>
+	<!--Script para Carrusel-->
+
+
+
+
+
+
+
+	<!--Pie de la página (Datos contacto)-->
+	<div class="pie">
+		<footer class="pie_pagina">
+			<div>
+				<a href="mailto:jen.marin@duocuc.cl" download>Enviar Mail</a>
+			</div>
+		</footer>
+	</div>
+	<!--Pie de la página (Datos contacto)-->
+
+
+
 </body>
 </html>
