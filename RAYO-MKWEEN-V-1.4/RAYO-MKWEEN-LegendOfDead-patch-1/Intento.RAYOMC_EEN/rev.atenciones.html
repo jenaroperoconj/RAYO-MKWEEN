@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bloque">
+        <div class="atencion">
+            <h1>Registro de Atenciones</h1>
+            <label> Busqueda por ID:
+                <input id="miInputNumber" type="number" placeholder="Ingrese ID" minlength="4">
+            </label>
+            <button class="button-tabla-atenciones"> Buscar </button>
+            <div class="tabla_atencion">
+                <div class="tabla">
+                    <table class="table table-border table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>Nombre</td>
+                                <td>nombre_empleado@gmail.com</td>
+                                <td>12/12/2020</td>
+                                <td>
+                                    <details>
+                                        <summary>Más información</summary>
+                                        <p>
+                                          El chasis de fibra de carbono ultraligero fue diseñado para ofrecer una excelente aerodinámica y estabilidad a altas velocidades, mientras que el motor de alta potencia proporciona un rendimiento excepcional en la pista. Los neumáticos de competición especialmente diseñados ofrecen un agarre máximo en las curvas cerradas y en las rectas largas.<br>
+                                          Contiene un llamativo diseño exterior. Con su carrocería roja brillante, detalles en amarillo y el emblemático número 95, encarna la velocidad y la confianza en sí mismo. Cada línea y curva del automóvil fue meticulosamente diseñada para transmitir una sensación de movimiento y energía, capturando la atención de todos.<br>
+                                          Fue construido con los materiales de la más alta calidad y la artesanía experta que caracteriza a todos los vehículos Dinoco. Desde el taller de montaje hasta la línea de pintura, cada paso del proceso de fabricación se llevó a cabo con precisión y cuidado, garantizando que fuera más que un simple automóvil.
+                                        </p>
+                                        <img src="images/el_sheriff_car.jpeg" alt="">
+                                        
+                                        <button class="button-tabla-atenciones"> Aceptar </button>
+                                        <button class="button-tabla-atenciones"> Rechazar </button>
+                                      </details>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="boton">
+                <button class="button-tabla-atenciones"> Actualizar </button>
+                <button class="button-tabla-atenciones"> Guardar </button>
+                <a href="main.html"><button class="button-tabla-atenciones"> Volver </button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!--Pie de la página (Datos contacto)-->
+    <div class="pie">
+        <footer class="pie_pagina">
+                <div>
+                    <a href="mailto:jen.marin@duocuc.cl" download>Contactanos Via Email</a>
+                </div>
+        </div>
+        </footer>
+    </div>
+</body>
+</html>
