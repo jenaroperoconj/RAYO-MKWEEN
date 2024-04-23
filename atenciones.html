@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Atenciones</title>
+</head>
+<body>
+    <div class="bloque">
+        <div class="atenciones">
+            <header>
+                <h1>Generar Atencion</h1>
+            </header>
+            <div class="formulario-atenciones">
+                    <form action="main.html">
+                      <div class="row">
+                        <div class="col-25">
+                          <label>Primer Nombre <input type="text" placeholder="Ingresa Primer Nombre"></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label>Segundo Nombre <input type="text" placeholder="Ingresa Segundo Nombre"></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label>Correo Electronico <input type="text" placeholder="Ingresa Primer Apellido"></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label >Telefono <input type="number" id="miInputNumber" placeholder="Ingresa Telefono"></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label>Categoria
+                            <select>
+                                <option value="Seleccione">Seleccione</option>
+                                <option value="Mantencion">Mantencion</option>
+                                <option value="Cambio de Pieza">Cambio de Pieza</option>
+                                <option value="Limpieza">Limpieza</option>
+                              </select>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label>Descripción</label>
+                        </div>
+                        <div class="col-75">
+                          <textarea name="" class="form-control" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                              <label>Imagenes</label>
+                            </div>
+                            <div class="col-75">
+                              <input type="file">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="main.html"><button class="button-tabla-atenciones" id="black"> Volver </button></a>
+                            <button type="reset" class="button-tabla-atenciones" id="red"> Borrar </button>
+                            <button class="button-tabla-atenciones"id="green"> Enviar </button>
+                        </div>
+                    </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Pie de la página (Datos contacto)-->
+    <div class="pie" id="footercart">
+      <footer class="pie_pagina">
+          Número de contacto: 9 2134 8199
+          <br>
+          Leer Política de Compra
+          <br>
+          <a href="mailto:jen.marin@duocuc.cl" download>Contactanos Vía E-mail</a>
+          <br>
+          <a href="https://maps.app.goo.gl/UeDyFPCjS79GM8bQ6" target="_blank" >Revisa Nuestra Ubicación!</a>
+          <br>
+          &copy; 2024 Generar Atenciones, Taller Mecánico Rayo Mkween
+      </footer>
+  </div>
+</body>
+</html>
