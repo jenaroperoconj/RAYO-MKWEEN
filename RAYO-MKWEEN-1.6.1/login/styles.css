@@ -1,0 +1,95 @@
+body{
+    background-color: rgb(228, 212, 197);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/*Login*/
+.session {
+    text-align: center;
+    background-color: rgb(77, 28, 28);
+    color:rgb(228, 212, 197);
+    font-family: sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 0 40px #9999;
+    margin: auto;
+    max-width: 500px;
+    margin-top: 50px;
+}
+
+.session h1{
+    padding-top: 20px;
+    font-weight: 100;
+    color: #f2f2f2ff;
+}
+
+.session input{
+    color: rgb(228, 212, 197);
+    border: none;
+    margin: 5px;
+    padding: 3px 25px;
+    background: transparent;
+    border-bottom: 1px solid rgb(228, 212, 197);
+    border-left: 1px solid rgb(228, 212, 197);
+    border-bottom-left-radius: 10px;
+}
+
+.session input[type="submit"]{
+    font-size: 15px; /*aumentar tamaño del botón*/
+    cursor: pointer;
+}
+
+.session input[type="submit"]:hover{
+    opacity: 0.3;
+}
+
+.session .form_input{
+    padding: 10px 20px;
+    text-align: right;
+    padding-right: 100px;
+}
+
+.session .form_button{
+    padding: 20px 0 20px 0;
+    transition: 0.2s ease;
+}
+
+/*Para la imagen del login*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container img {
+    border-radius: 50%;
+    padding-top: 100px;
+    height: 150px;
+    width: 200px;
+}
+
+/*Pie de pagina*/
+.pie{
+    position: relative;
+    min-height: 100vh;
+    margin-top: 10px;
+}
+
+.pie_pagina{
+    position: absolute ;
+    width: 100%;
+    background-color: rgb(77, 28, 28);
+    bottom: 0;
+    height: 10%;
+    text-align: center;
+    padding-top: 10px;
+    content: ""; 
+    color: rgb(228, 212, 197);
+    line-height: 30px;
+}
+
+.pie_pagina a{
+    color: rgb(228, 212, 197);
+    content: "";  
+}

@@ -1,0 +1,110 @@
+body{
+    background-color: rgb(228, 212, 197);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+/*Revisiones Atenciones*/
+.bloque{
+    width: 100%;
+    height: 100% ;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-tabla-atenciones{
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255);
+    background-color: rgb(228, 212, 197);
+    border-color: rgb(228, 212, 197);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*Modificar color botones*/
+#green {
+    background-color: #009688;
+    border-color: #009688;
+}
+#red {
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+#black {
+    background-color: #333;
+    border-color: #333;
+}
+
+.bloque input{
+    border-radius: 10px;
+    color: rgb(77, 28, 28);
+    font-size: 15px;
+    font-weight: bold;  
+    display: flex; 
+}
+
+/*carrito.html*/
+header {
+    background-color: rgb(77, 28, 28);
+    color: #fffe;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Atencion */
+.atenciones {
+    color: rgb(228, 212, 197);
+    background-color: rgb(77, 28, 28);
+    min-width: 430px;
+    border-radius: 10px;
+    width: 50%;
+    height: 100%; 
+    padding: 0 50px 50px 50px;
+    justify-content: center;
+}
+
+.formulario-atenciones{
+    color: rgb(77, 28, 28);
+    background-color: rgb(228, 212, 197);
+    width: 100%;
+    height: 100%; 
+    border-radius: 10px;   
+    margin-bottom: 20px;
+    display: flex;
+    padding: 50px 0px 50px 0px;
+    justify-content: center;
+}
+
+.formulario-atenciones div{
+    padding-top: 5px;
+    text-align: left;
+}
+
+.formulario-atenciones textarea{     
+    min-width: 100%;     
+    resize: vertical;     
+    min-height: 100px;     
+    max-height: 200px;     
+    font-family: sans-serif; 
+}
+
+.pie_pagina{
+    width: 100%;
+    background-color: rgb(77, 28, 28);
+    bottom: 0;
+    height: 10%;
+    text-align: center;
+    margin-top: 5%;
+    padding-top: 10px;
+    color: rgb(228, 212, 197);
+    line-height: 30px;
+}
+
+.pie_pagina a{
+    color: rgb(228, 212, 197);
+    content: "";  
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con nosotros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesForm.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Postulación para Mecánico en Taller Rayo McQueen</h1>
+        <a class="volver" href="../main/main.html">Volver atrás</a>
+        <form id="formulario" action="#" method="post">
+            <div class="form-group">
+                <label for="rut">RUT:</label>
+                <input type="text" class="form-control" id="rut" name="rut" required minlength="9" maxlength="10">
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required minlength="3" maxlength="20">
+            </div>
+
+            <div class="form-group">
+                <label for="apellido_paterno">Apellido Paterno:</label>
+                <input type="text" class="form-control" id="apellido_paterno" name="apellido_paterno" required minlength="3" maxlength="20">
+            </div>
+
+            <div class="form-group">
+                <label for="apellido_materno">Apellido Materno:</label>
+                <input type="text" class="form-control" id="apellido_materno" name="apellido_materno" required minlength="3" maxlength="20">
+            </div>
+
+            <div class="form-group">
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" class="form-control" id="edad" name="edad" required min="18" max="35">
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Género:</label>
+                <select class="form-control" id="genero" name="genero" required>
+                    <option value="">Seleccione...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input type="tel" class="form-control" id="celular" name="celular" required minlength="9" maxlength="12">
+            </div>
+
+            <div class="form-group">
+                <label for="especializacion">Especialización:</label>
+                <input type="text" class="form-control" id="especializacion" name="especializacion" required>
+            </div>
+
+            <div class="form-group">
+                <label for="motivacion">Porqué quieres trabajar con nosotros?</label>
+                <textarea rows="5" class="form-control" id="motivacion" name="motivacion" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="curriculum">Adjunta Curriculum</label>
+                <br>
+                <input type="file">
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-secondary" id="crear_carta">Crear Carta</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                
+            </div>
+        </form>
+
+        <textarea id="carta" class="form-control" rows="10" readonly></textarea>
+        <br>
+        <br>
+        
+    </div>
+
+    <!--Pie de la página (Datos contacto)-->
+    <div class="pie" id="footermain">
+        <footer class="pie_pagina">
+            <div>
+                Número de contacto: 9 2134 8199
+                <br>
+                <a href="mailto:jen.marin@duocuc.cl" download>Contactanos Vía E-mail</a>
+                <br>
+                <a href="https://maps.app.goo.gl/UeDyFPCjS79GM8bQ6" target="_blank" >Revisa Nuestra Ubicación!</a>
+                <br>
+                &copy; 2024 Trabaja con nosotros, Taller Mecánico Rayo Mkween
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
