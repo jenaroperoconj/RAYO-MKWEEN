@@ -1,0 +1,30 @@
+/*Para la imagen del login*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body{
+    background-color: rgb(228, 212, 197);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/*Pie de pagina*/
+.pie_pagina{
+    width: 100%;
+    background-color: rgb(77, 28, 28);
+    bottom: 0;
+    height: 10%;
+    text-align: center;
+    margin-top: 5%;
+    padding-top: 10px;
+    color: rgb(228, 212, 197);
+    line-height: 30px;
+}
+
+.pie_pagina a{
+    color: rgb(228, 212, 197);
+    content: "";  
+}
