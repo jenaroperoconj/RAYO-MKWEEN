@@ -2,29 +2,29 @@
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="{% static 'app/css/formulario/styles.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/formulario/styles.min.css' %}">
 {% endblock %}
 {% block contenido %}
 <div class="container" style="padding: 110px 0">
     <h1 class="text-center">Postulación para Mecánico en Taller Rayo McQueen</h1>
     
-    <form id= "formulario" action="{% url 'añadirpostulante' %}" method="POST">
+    <form id="formulario" action="{% url 'añadirpostulante' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
             <label for="rut">RUT</label>
-            <input type="text" class="form-control" id="rut" name="rut" required minlength="9" maxlength="10">
+            <input type="text" class="form-control" id="rut" name="rut" required minlength="9" maxlength="12">
         </div>
         <div class="form-group">
             <label for="pnombre">Nombre</label>
-            <input type="text" class="form-control" id="pnombre" name="pnombre" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" required minlength="3" maxlength="50">
+            <input type="text" class="form-control" id="pnombre" name="pnombre"  required minlength="3" maxlength="50">
         </div>
         <div class="form-group">
             <label for="appaterno">Apellido Paterno</label>
-            <input type="text" class="form-control" id="appaterno" name="appaterno" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" required minlength="3" maxlength="50">
+            <input type="text" class="form-control" id="appaterno" name="appaterno" pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" title="El nombre no debe contener números o carácteres especiales" maxlength="50" required minlength="3" maxlength="50">
         </div>
         <div class="form-group">
             <label for="apmaterno">Apellido Materno</label>
-            <input type="text" class="form-control" id="apmaterno" name="apmaterno" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" required minlength="3" maxlength="50">
+            <input type="text" class="form-control" id="apmaterno" name="apmaterno" pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" title="El nombre no debe contener números o carácteres especiales" maxlength="50" required minlength="3" maxlength="50">
         </div>
         <div class="form-group">
             <label for="edad">Edad</label>
@@ -57,7 +57,7 @@
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-secondary" id="crear_carta">Crear Carta</button>
-            <button type="submit"class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
     </form>
     <!-- Mensajes de éxito y error -->
@@ -81,4 +81,5 @@
 {% endblock %}
 {% block js %}
 <script type="text/javascript" src="{% static 'app/js/trabajaConNosotros/crearCarta.js' %}"></script>
+<script type="text/javascript" src="{% static 'app/js/trabajaConNosotros/validar.js' %}"></script>
 {% endblock %}

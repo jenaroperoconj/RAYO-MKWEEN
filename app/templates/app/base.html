@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% load static %}
-<link rel="stylesheet" href="{% static 'app/css/base/styles.css' %}">
+
+<link rel="stylesheet" href="{% static 'app/css/base/styles.min.css' %}">
 <!-- ICONO PAGINA-->
 <link rel="shortcut icon" href="{% static 'app/images/rayo_icon.png' %}"/>
 <title>Taller Rayo McQueen</title>
@@ -17,7 +18,7 @@
 <nav>  
     <div class="logo">
         <a href="{% url 'main' %}">
-        <img src="{% static 'app/images/rayo_logo.png' %}" alt="Rayo Logo">
+        <img src="{% static 'app/images/rayo_logo.png' %}" data-src="{% static 'app/images/rayo_logo.png' %}" class="lazyload" alt="Rayo Logo">
         </a>
     </div>
     <ul>			
@@ -72,6 +73,8 @@
 {% endblock %}
 <!--Script para Api-->
 <script src="{% static 'app/js/base/scriptApi.js' %}"></script>
+<!--Script para Lazyloading-->
+<script src="{% static 'app/js/base/lazyload.js' %}"></script>
 <!--Script Modal
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="{% static 'app/js/base/modal.js' %}"></script>-->

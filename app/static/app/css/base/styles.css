@@ -45,9 +45,6 @@ nav ul li a{
 }
 
 /* Para el cerrar sesión */
-nav ul li {
-    position: relative;
-}
 
 .dropdown-content {
     display: none;

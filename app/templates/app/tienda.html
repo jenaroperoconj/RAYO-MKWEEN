@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'app/css/tienda/styles.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/tienda/styles.min.css' %}">
 {% endblock %}
 
 {% block contenido %}
@@ -14,7 +14,7 @@
             <div class="carousel-container">
                 <div class="carousel-slide">
                     <div>
-                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                        <img class="lazyload" src="{% static 'app/images/jackson_storm_car.jpg' %}" data-src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
                     </div>
                     <div class="texto">
                         <h2>Articulos</h2>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="carousel-slide">
                     <div>
-                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                        <img class="lazyload" src="{% static 'app/images/jackson_storm_car.jpg' %}" data-src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
                     </div>
                     <div class="texto">
                         <h2>Articulos</h2>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="carousel-slide">
                     <div>
-                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                        <img class="lazyload" src="{% static 'app/images/jackson_storm_car.jpg' %}" data-src="{% static 'app/images/jackson_storm_car.jpg' %}"  alt="Imagen 3">  
                     </div>
                     <div class="texto">
                         <h2>Articulos</h2>
@@ -75,12 +75,24 @@
                                 <form action="{% url 'agregaralcarrito' %}" method="post" style="display:inline;">
                                     {% csrf_token %}
                                     <input type="hidden" name="id_producto" value="{{ item.producto.id_producto }}">
-                                    <button type="submit" class="button-tabla-atenciones" id="green"> + </button>
+                                    <button type="submit" tabindex="0" class="plusButton">
+                                    <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                        <g mask="url(#mask0_21_345)">
+                                        <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+                                        </g>
+                                    </svg>
+                                    </button>
                                 </form>
                                 <form action="{% url 'quitar_del_carrito' %}" method="post" style="display:inline;">
                                     {% csrf_token %}
                                     <input type="hidden" name="id_producto" value="{{ item.producto.id_producto }}">
-                                    <button type="submit" class="button-tabla-atenciones" id="red"> - </button>
+                                    <button type="submit" tabindex="0" class="plusButton">
+                                    <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                        <g mask="url(#mask0_21_345)">
+                                        <path d="M6.25 13.75H23.75V16.25H6.25V13.75Z"></path>
+                                        </g>
+                                    </svg>
+                                    </button>
                                 </form>
                             </td>
                         </tr>
@@ -94,13 +106,25 @@
         {% if productos %}
             {% for producto in productos %}
                 <div class="product" data-category="{{ producto.get_categoria_prod_display }}">
-                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                    <img class="lazyload" src="{{ producto.imagen.url }}" data-src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
                     <h2>{{ producto.nombre }}</h2>
                     <p>${{ producto.precio }}</p>
                     <form action="{% url 'agregaralcarrito' %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="id_producto" value="{{ producto.id_producto }}">
-                        <button type="submit" class="button-tabla-atenciones" id="green">Agregar Al Carrito</button>
+                        <button class="transparent" type="submit">
+                            <div class="button">
+                                <div class="button-wrapper">
+                                    <div class="text">Añadir
+                                    </div>
+                                    <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                                    </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
                     </form>
                 </div>
             {% endfor %}
@@ -110,7 +134,7 @@
             {% if user.is_superuser %}
             <a href="{% url 'test' %}">
             <div class="agregar-prod">
-                <img src="{% static 'app/images/+.png'%}" alt="Agregar-producto">
+                <img class="lazyload" src="{% static 'app/images/+.png'%}" data-src="{% static 'app/images/+.png'%}" alt="Agregar-producto">
             </div>
             </a>
             {% endif %}
