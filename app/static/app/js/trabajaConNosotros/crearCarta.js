@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pnombre: document.getElementById('pnombre').value,
             appaterno: document.getElementById('appaterno').value,
             apmaterno: document.getElementById('apmaterno').value,
+            fecha_nacimiento: document.getElementById('fecha_nacimiento').value,
             edad: document.getElementById('edad').value,
             tipo_genero: document.getElementById('tipo_genero').value,
             email: document.getElementById('email').value,
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     Estimado equipo del Taller Rayo McQueen,
 
-    Mi nombre es ${datos.pnombre} ${datos.appaterno} ${datos.apmaterno}, con RUT ${datos.rut}, con ${datos.edad} años de edad. Me dirijo a ustedes para expresar mi interés en la posición de mecánico en su empresa.
+    Mi nombre es ${datos.pnombre} ${datos.appaterno} ${datos.apmaterno}, con RUT ${datos.rut}, nacido el ${datos.fecha_nacimiento} y de ${datos.edad} años de edad. Me dirijo a ustedes para expresar mi interés en la posición de mecánico en su empresa.
 
     Mi especialización se encuentra en ${datos.especializacion}, y me motiva postular a este trabajo debido a ${datos.motivo}. Adjunto a este correo, pueden encontrar mi información de contacto: 
     - Email: ${datos.email}

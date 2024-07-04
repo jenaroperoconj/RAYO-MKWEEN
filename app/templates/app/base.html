@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% load static %}
 <link rel="stylesheet" href="{% static 'app/css/base/styles.css' %}">
-<!-- ICONO PAGINA-->
-<link rel="shortcut icon" href="{% static 'app/images/rayo_icon.png' %}"/>
 <title>Taller Rayo Mcween</title>
 {% block css %}
 
@@ -23,15 +21,9 @@
     <ul>			
         <li><a href="{% url 'tienda' %}" class="link">Tienda</a></li>
         <li><a href="{% url 'atenciones' %}" class="link">Generar Atención</a></li>
-        <li><a href="{% url 'rev_atenciones' %}" class="link">Revisar Atenciones</a></li>
         <li><a href="{% url 'rev_postulaciones' %}" class="link">Revisar Postulaciones</a></li>
         <li><a href="{% url 'carrito' %}" class="link">Mi Carrito</a></li>
-        {%  if user.is_authenticated  %}
-          <li><a href="{% url 'logout' %}" class="link" id="logout">Cerrar Sesión</a></li>  
-          <li><a href="#" class="link">{{user.username}}</a></li>
-        {% else %}
-          <li><a href="{% url 'login' %}" class="link" >Iniciar Sesión</a></li>     
-        {% endif %}      
+        <li><a href="{% url 'login' %}" class="link" id="logout">Cerrar Sesión</a></li>           
     </ul>
 </nav>
 

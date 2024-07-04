@@ -10,36 +10,35 @@
     <h1>Generar Atención</h1>
     </header>
     <div class="formulario-atenciones">
-      <form action="{% url 'añadiratencion' %}" method="POST">
-      {% csrf_token %}
+      <form action="../main">
       <div class="row">
         <div class="col-25">
-          <label>Nombre de Mecánico <input type="text" name="nom_mecanico" placeholder="Rodrigo Quesada" required ></label>
+          <label>Nombre de Mecánico <input type="text" placeholder="Rodrigo Quesada" required></label>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label>Nombre Cliente <input type="text"  name="nom_cliente" placeholder="Mariana Alonsa" required></label>
+          <label>Nombre Cliente <input type="text" placeholder="Mariana Alonsa" required></label>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label>Email <input type="text" name="email" placeholder="ej: pedrito@gmail.com" required></label>
+          <label>Correo Electronico <input type="text" placeholder="ej: pedrito@gmail.com"></label>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label >Fecha <input type="date" name="fecha_atencion" required></label>
+          <label >Fecha <input type="date" required></label>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
           <label>Categoría
-            <select  name="categoria" >
-              <option value="0">Seleccione</option>
-              <option value="1">Mantencion</option>
-              <option value="2">Cambio de Pieza</option>
-              <option value="3">Limpieza</option>
+            <select>
+              <option value="Seleccione">Seleccione</option>
+              <option value="Mantención">Mantencion</option>
+              <option value="Cambio de Pieza">Cambio de Pieza</option>
+              <option value="Limpieza">Limpieza</option>
             </select>
           </label>
         </div>
@@ -49,7 +48,7 @@
           <label>Descripción
         </div>
         <div class="col-75">
-          <textarea id="descripcion" name="descripcion" class="form-control" cols="30" rows="10" required></textarea>
+          <textarea name="" class="form-control" cols="30" rows="10"></textarea>
           </label>
         </div>
         <div class="row">
@@ -57,12 +56,13 @@
             <label>Trabajo realizado</label>
           </div>
           <div class="col-75">
-            <input type="file" id="archivo">
+            <input type="file">
           </div>
         </div>
         <div>
-          <button type="reset" class="button-tabla-atenciones" id="red"> Limpiar </button>
-          <button type="submit" class="button-tabla-atenciones"id="green"> Enviar </button>
+          <a href="../main"><button class="button-tabla-atenciones" id="black"> Volver </button></a>
+          <button type="reset" class="button-tabla-atenciones" id="red"> Borrar </button>
+          <button class="button-tabla-atenciones"id="green"> Enviar </button>
         </div>
       </div>
       </form>
