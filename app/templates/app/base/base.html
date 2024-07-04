@@ -6,21 +6,24 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'app/css/base/styles.css' %}">
 <title>Taller Rayo Mcween</title>
+{% block css %}
+
+{% endblock %}
 </head>
 <body>
 <!--Menu-->
 <nav>  
     <div class="logo">
-        <a href="../main">
+        <a href="{% url 'main' %}">
         <img src="{% static 'app/images/rayo_logo.png' %}" alt="Rayo Logo">
         </a>
     </div>
     <ul>			
-        <li><a href="../atenciones" class="link">Generar Atencion</a></li>
-        <li><a href="../revatenciones" class="link">Revisar atenciones</a></li>
-        <li><a href="../carrito" class="link">Carrito de compras</a></li>
+        <li><a href="{% url 'atenciones' %}" class="link">Generar Atencion</a></li>
+        <li><a href="{% url 'revatenciones' %}" class="link">Revisar atenciones</a></li>
+        <li><a href="{% url 'carrito' %}" class="link">Carrito de compras</a></li>
         <input placeholder="Buscar" id="menu-search" class="input" name="text" type="text">
-        <li><a href="../" class="link" id="logout">Cerrar Sesion</a></li>           
+        <li><a href="{% url 'login' %}" class="link" id="logout">Cerrar Sesion</a></li>           
     </ul>
 </nav>
 
@@ -40,17 +43,19 @@
       <br>
         <a href="https://maps.app.goo.gl/UeDyFPCjS79GM8bQ6" target="_blank" >Revisa Nuestra Ubicación!</a>
       <br>
-        <a href="../trabaja_con_nosotros">Trabaja con nosotros</a>
+        <a href="{% url 'trabaja_con_nosotros' %}">Trabaja con nosotros</a>
       <br>
         &copy; 2024, Taller Mecánico Rayo Mkween
     </div>
   </footer>
 </div>
+{% block js %}
 
+{% endblock %}
 <!--Script para Api-->
-<script src="{% static 'app/js/main/scriptApi.js' %}"></script>   
+<script src="{% static 'app/js/base/scriptApi.js' %}"></script>   
 <!--Script Modal-->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="{% static 'app/js/main/modal.js' %}"></script>
+<script src="{% static 'app/js/base/modal.js' %}"></script>
 </body>
 </html>

@@ -1,24 +1,26 @@
 from django.db import models
 
 # Create your models here.
+opciones_genero = [
+    [0,"Seleccione"],
+    [1,"Femenino"],
+    [2,"Masculino"],
+    [3,"39 tipos de gay"],
+]
 
-class Genero(models.Model):
-    id_genero = models.AutoField(db_column='idGenero',primary_key=True)
-    genero = models.CharField(max_length=20, blank=False, null=False)
 
-    def __str__(self):
-        return str(self.genero)
-    
-class Alumno(models.Model):
+class postulacion(models.Model):
     rut = models.CharField(primary_key=True, max_length=10)
-    nombre = models.CharField(max_length=20)
-    apellido_paterno = models.CharField(max_length=20)
-    apellido_materno = models.CharField(max_length=20)
-    fecha_nacimiento = models.DateField(blank=False, null=False)
-    id_genero = models.ForeignKey('Genero',on_delete=models.CASCADE, db_column='idGenero')
-    telefono = models.CharField(max_length=45)
-    email = models.EmailField(unique=True, max_length=100, blank=True, null=True)
-    direccion = models.CharField(max_length=50, blank=True, null=True)
-    activo = models.IntegerField()
+    pnombre = models.CharField(max_length=50)
+    appaterno = models.CharField(max_length=50)
+    apmaterno = models.CharField(max_length=50)
+    fecha_nacimiento = models.DateField(null=False)
+    edad = models.IntegerField()
+    tipo_genero = models.IntegerField(choices=opciones_genero, default=0)
+    email = models.EmailField(max_length=100, blank=True, null=False)
+    celular = models.IntegerField()
+    especializacion = models.CharField(max_length=50)
+    motivo = models.TextField()
+
     def __str__(self):
-        return str(self.nombre)+" "+str(self.apellido_paterno)
+        return str(self.rut)

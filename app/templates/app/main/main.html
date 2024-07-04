@@ -1,32 +1,34 @@
 {% extends "app/base/base.html" %}
 {% load static %}
-{% block contenido %}
+{% block css %}
 <link rel="stylesheet" href="{% static 'app/css/main/styles.css' %}">
+{% endblock %}
+{% block contenido %}
 <!--El section es para separar-->
 <section></section>
 <!--Productos venta-->
 <div class="productos">
   <div class="prod-img">
     <p>Precio $10.000</p>
-    <img src="{% static 'app/images/frenos.jpg' %}" alt="">
+    <img src="{% static 'app/images/frenos.png' %}" alt="">
     <button class="button-tabla-atenciones" id="green"> Añadir al Carrito </button>
   </div>
   
   <div class="prod-img">
     <p>Precio $10.000</p>
-    <img src="{% static 'app/images/rueda.jpg' %}" alt="">
+    <img src="{% static 'app/images/rueda.png' %}" alt="">
     <button class="button-tabla-atenciones" id="green"> Añadir al Carrito </button>
   </div>
 
   <div class="prod-img">
     <p>Precio $10.000</p>
-    <img src="{% static 'app/images/turbo.jpg' %}" alt="">
+    <img src="{% static 'app/images/turbo.png' %}" alt="">
     <button class="button-tabla-atenciones" id="green"> Añadir al Carrito </button>
   </div>
   
   <div class="prod-img">
     <p>Precio $10.000</p>
-    <img src="{% static 'app/images/suspension.jpg' %}" alt="">
+    <img src="{% static 'app/images/suspension.png' %}" alt="">
     <button class="button-tabla-atenciones" id="green"> Añadir al Carrito </button>
   </div>
 </div>

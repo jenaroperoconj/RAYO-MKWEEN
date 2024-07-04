@@ -1,12 +1,13 @@
 from django.urls import path
-from .views import login, main, atenciones, carrito, revatenciones, trabaja_con_nosotros, index
+from . import views
 
 urlpatterns = [
-    path('', login, name="login"),
-    path('main/', main, name="main"),
-    path('atenciones/', atenciones, name="atenciones"),
-    path('carrito/', carrito, name="carrito"),
-    path('revatenciones/', revatenciones, name="revatenciones"),
-    path('trabaja_con_nosotros/', trabaja_con_nosotros, name='trabaja_con_nosotros'),
-    path('index/', index, name='index'),
+    path('', views.login, name="login"),
+    path('index/', views.index, name='index'),
+    path('main/', views.main, name="main"),
+    path('atenciones/', views.atenciones, name="atenciones"),
+    path('carrito/', views.carrito, name="carrito"),
+    path('revatenciones/', views.revatenciones, name="revatenciones"),
+    path('trabaja-con-nosotros/', views.trabaja_con_nosotros, name='trabaja_con_nosotros'),
+    path('añadirpostulante/', views.añadirpostulante, name="añadirpostulante")
 ]
