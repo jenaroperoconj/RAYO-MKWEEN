@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app/css/base/styles.css' %}">
+
+<title>Taller Rayo Mcween</title>
+</head>
+<body>
+<!--Menu-->
+<nav>  
+    <div class="logo">
+        <a href="../main">
+        <img src="{% static 'app/images/rayo_logo.png' %}" alt="Rayo Logo">
+        </a>
+    </div>
+    <ul>			
+        <li><a href="../atenciones" class="link">Generar Atencion</a></li>
+        <li><a href="../revatenciones" class="link">Revisar atenciones</a></li>
+        <li><a href="../carrito" class="link">Carrito de compras</a></li>
+        <input placeholder="Buscar" class="input" name="text" type="text">
+        <li><a href="../" class="link" id="logout">Cerrar Sesion</a></li>           
+    </ul>
+</nav>
+
+<div class="contenido">
+  {% block contenido %}
+  
+  {% endblock  %}
+</div>
+
+<!--Pie de la página-->
+<div class="pie">
+  <footer class="pie_pagina">
+    <div>
+        Número de contacto: 9 2134 8199
+      <br>
+        <a href="mailto:jen.marin@duocuc.cl" download>Contactanos Vía E-mail</a>
+      <br>
+        <a href="https://maps.app.goo.gl/UeDyFPCjS79GM8bQ6" target="_blank" >Revisa Nuestra Ubicación!</a>
+      <br>
+        <a href="../trabaja_con_nosotros">Trabaja con nosotros</a>
+      <br>
+        &copy; 2024, Taller Mecánico Rayo Mkween
+    </div>
+  </footer>
+</div>
+
+<!--Script para Api-->
+<script src="{% static 'app/js/main/scriptApi.js' %}"></script>   
+<!--Script Modal-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="{% static 'app/js/main/modal.js' %}"></script>
+</body>
+</html>

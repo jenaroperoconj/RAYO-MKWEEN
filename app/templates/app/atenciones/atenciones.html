@@ -1,0 +1,70 @@
+{% extends "app/base/base.html" %}
+{% load static %}
+{% block contenido %}
+<link rel="stylesheet" href="{% static 'app/css/atenciones/styles.css' %}">
+
+  <div class="bloque">
+    <div class="atenciones">
+      <header>
+        <h1>Generar Atencion</h1>
+      </header>
+      <div class="formulario-atenciones">
+        <form action="../main">
+          <div class="row">
+            <div class="col-25">
+              <label>Primer Nombre <input type="text" placeholder="Ingresa Primer Nombre"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label>Segundo Nombre <input type="text" placeholder="Ingresa Segundo Nombre"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label>Correo Electronico <input type="text" placeholder="Ingresa Primer Apellido"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label >Telefono <input type="number" id="miInputNumber" placeholder="Ingresa Telefono"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label>Categoria
+                <select>
+                  <option value="Seleccione">Seleccione</option>
+                  <option value="Mantencion">Mantencion</option>
+                  <option value="Cambio de Pieza">Cambio de Pieza</option>
+                  <option value="Limpieza">Limpieza</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label>Descripción</label>
+            </div>
+            <div class="col-75">
+              <textarea name="" class="form-control" cols="30" rows="10"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label>Imagenes</label>
+              </div>
+              <div class="col-75">
+                <input type="file">
+              </div>
+            </div>
+            <div>
+              <a href="../main"><button class="button-tabla-atenciones" id="black"> Volver </button></a>
+              <button type="reset" class="button-tabla-atenciones" id="red"> Borrar </button>
+              <button class="button-tabla-atenciones"id="green"> Enviar </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

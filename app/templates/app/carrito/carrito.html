@@ -1,0 +1,31 @@
+{% extends "app/base/base.html" %}
+{% load static %}
+{% block contenido %}
+    <link rel="stylesheet" href="{% static 'app/css/carrito/styles.css' %}">
+
+    <!--Carrito-->
+    <main class="main-cart">
+        <div class="bloque">
+            <div class="atencion">
+                <header>
+                    <h1>Carrito de Compras</h1>
+                </header>
+                <ul class="formato-carrito">
+                    <li class="cart-list"><img src="{% static 'app/images/rueda.jpg' %}" id="img">Ruedas<br>  Valor:   $100.000 <button class="del-button"id="red">Eliminar</button></li>
+                    <li class="cart-list"><img src="{% static 'app/images/suspension.jpg' %}" id="img">Suspensiones<br>  Valor:   $50.000 <button class="del-button"id="red">Eliminar</button></li>
+                    <li class="cart-list"><img src="{% static 'app/images/frenos.jpg' %}" id="img">Frenos<br>  Valor:   $50.000 <button class="del-button"id="red">Eliminar</button></li>
+                    <li class="cart-list"><img src="{% static 'app/images/turbo.jpg' %}" id="img">Turbo<br>  Valor:   $20.000 <button class="del-button"id="red">Eliminar</button></li>
+                </ul>
+                <div class="detalle-venta">
+                    --Detalle--
+                    <br>
+                    Total a pagar: $*****
+                </div>
+                <div class="button-cart">
+                    <a href="../main"><button id="black"> Volver </button></a>
+                    <button id="green"> Comprar </button>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
