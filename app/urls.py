@@ -16,4 +16,6 @@ urlpatterns = [
     path('tienda/', views.tienda, name="tienda"),
     path('añadir-atencion/', views.añadiratencion, name="añadiratencion"),
     path('rev-atenciones/', views.rev_atenciones, name="rev_atenciones"),
+    path('eliminar-atencion/<int:id_atencion>/', views.eliminar_atenciones, name="eliminaratencion"),
+    #path('actualizar-atencion/<int:id>/', views.actualizaratencion, name="actualizaratencion"),
 ]

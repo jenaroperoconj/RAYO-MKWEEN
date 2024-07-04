@@ -40,3 +40,18 @@ class atencion(models.Model):
 
     def __str__(self):
         return str(self.id_atencion)
+    
+categoria_producto = [
+    [0,"Seleccione"],
+    [1,"Ruedas"],
+    [2,"Suspensiones"],
+    [3,"Turbos"],
+    [4,"Frenos"],
+]
+class producto(models.Model):
+    id_producto = models.AutoField(db_column='id_producto', primary_key=True)
+    nom_producto = models.CharField(max_length=50)
+    precio = models.IntegerField()
+    categoria = models.IntegerField(choices=categoria_producto, default=0)
+    def __str__(self):
+        return str(self.id_producto)

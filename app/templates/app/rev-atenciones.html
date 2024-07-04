@@ -36,7 +36,7 @@
                             <td>{{ x.get_categoria_display }}</td>
                             <td>{{ x.descripcion }}</td>
                             <td><a href=""><button class="button-tabla-atenciones" id="green"> Actualizar </button></a></td>
-                            <td><a href=""><button class="button-tabla-atenciones" id="red"> Eliminar </button></a></td>
+                            <td><a href="{% url 'eliminaratencion' x.id_atencion %}"><button class="button-tabla-atenciones" id="red"> Eliminar </button></a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -44,9 +44,7 @@
             </div>
         </div>
         <div class="boton">
-            <button class="button-tabla-atenciones"> Actualizar </button>
-            <button class="button-tabla-atenciones"id="green"> Guardar </button>
-            <a href="{% url 'main' %}"><button class="button-tabla-atenciones" id="black"> Volver </button></a>
+            <a href="{% url 'main' %}"><button class="button-tabla-atenciones" id="gray"> Volver </button></a>
         </div>
     </div>
 </div>

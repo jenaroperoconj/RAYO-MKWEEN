@@ -115,3 +115,10 @@ def añadiratencion(request):
 def rev_atenciones(request):
     atenciones = atencion.objects.all()
     return render(request,'app/rev-atenciones.html',{'atenciones' :atenciones})
+
+
+#Eliminar atenciones realizadas
+def eliminar_atenciones(request,id_atencion):
+    atenciones = atencion.objects.get(id_atencion=id_atencion)
+    atenciones.delete()
+    return redirect("rev_atenciones")
