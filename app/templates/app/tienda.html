@@ -8,97 +8,109 @@
 
 {% block contenido %}
 <div class="bloque">
-        <h1>Tienda Online</h1>
+        <h1>Más Comprados</h1>
     <main>
-
         <div class="carousel">
             <div class="carousel-container">
                 <div class="carousel-slide">
-                    <p><img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">{% lorem 2s %}</p>  
+                    <div>
+                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 3 %}</p>   
+                    </div> 
                 </div>
                 <div class="carousel-slide">
-                    <p><img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">{% lorem 2 %}</p>  
+                    <div>
+                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 3 %}</p>   
+                    </div>  
                 </div>
                 <div class="carousel-slide">
-                    <p><img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">{% lorem 2 %}</p>                   
+                    <div>
+                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 3 %}</p>   
+                    </div>                    
                 </div>
             </div>
             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
             <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
 
+        <h1>Tienda Online</h1>
 
+        <div class="filtro">
+            <div>
+                <br>
+                <br>
+                <input class="input" placeholder="Buscar">
+                <ul class="">Ruedas</ul>
+                <ul class="">Suspensiones</ul>
+                <ul class="">Turbos</ul>
+                <ul class="">Frenos</ul>
+                <div class="carrito">
+                    <table>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">.</th>
+                        </tr>
+                        {% for item in itemcarritos %}
+                        <tr>
+                            <td>{{ item.producto.nombre }}</td>
+                            <td>${{ item.producto.precio }}</td>
+                            <td>{{ item.cantidad }}</td>
+                            <td>
+                                <form action="{% url 'agregaralcarrito' %}" method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id_producto" value="{{ item.producto.id_producto }}">
+                                    <button type="submit" class="button-tabla-atenciones" id="green"> + </button>
+                                </form>
+                                <form action="{% url 'quitar_del_carrito' %}" method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id_producto" value="{{ item.producto.id_producto }}">
+                                    <button type="submit" class="button-tabla-atenciones" id="red"> - </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+        
         <section class="products">
-            <div class="product" data-category="electronics">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$499</p>
+        {% if productos %}
+            {% for producto in productos %}
+                <div class="product" data-category="{{ producto.get_categoria_prod_display }}">
+                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                    <h2>{{ producto.nombre }}</h2>
+                    <p>${{ producto.precio }}</p>
+                    <form action="{% url 'agregaralcarrito' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="id_producto" value="{{ producto.id_producto }}">
+                        <button type="submit" class="button-tabla-atenciones" id="green">Agregar Al Carrito</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>No hay productos disponibles.</h3>
+        {% endif %}
+            {% if user.is_superuser %}
+            <a href="{% url 'test' %}">
+            <div class="agregar-prod">
+                <img src="{% static 'app/images/+.png'%}" alt="Agregar-producto">
             </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/rueda.png' %}" alt="">
-                <h2>Rueda</h2>
-                <p>$19</p>
-            </div>
-            <div class="product" data-category="electronics">
-                <img src="{% static 'app/images/turbo.png' %}" alt="">
-                <h2>Turbo</h2>
-                <p>$799</p>
-            </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/suspension.png' %}" alt="">
-                <h2>suspension</h2>
-                <p>$49</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$899</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/rueda.png' %}" alt="">
-                <h2>Rueda</h2>
-                <p>$29</p>
-            </div>
-            <div class="product" data-category="electronics">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$499</p>
-            </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/rueda.png' %}" alt="">
-                <h2>Rueda</h2>
-                <p>$19</p>
-            </div>
-            <div class="product" data-category="electronics">
-                <img src="{% static 'app/images/turbo.png' %}" alt="">
-                <h2>Turbo</h2>
-                <p>$799</p>
-            </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/suspension.png' %}" alt="">
-                <h2>suspension</h2>
-                <p>$49</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$899</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/rueda.png' %}" alt="">
-                <h2>Rueda</h2>
-                <p>$29</p>
-            </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/suspension.png' %}" alt="">
-                <h2>suspension</h2>
-                <p>$49</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$899</p>
-            </div>
+            </a>
+            {% endif %}
         </section>
     </main>
 <script>    
@@ -116,10 +128,8 @@
         showSlide(slideIndex += n);
     }
     
-    // Mostrar el primer slide al cargar la página
     showSlide(slideIndex);
 </script>
-
 
 </div>
 

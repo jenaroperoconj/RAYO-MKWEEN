@@ -5,40 +5,42 @@
 {% endblock %}
 {% block contenido %}
 <div class="bloque">
+{% if user.is_superuser %}
   <div class="atenciones">
     <header>
     <h1>Generar Atención</h1>
     </header>
     <div class="formulario-atenciones">
-      <form action="../main">
+      <form action="{% url 'añadiratencion' %}" method="POST">
+      {% csrf_token %}
       <div class="row">
         <div class="col-25">
-          <label>Nombre de Mecánico <input type="text" placeholder="Rodrigo Quesada" required></label>
+          <label>Nombre de Mecánico <input type="text" name="nom_mecanico" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" placeholder="Rodrigo Quesada" required ></label>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label>Nombre Cliente <input type="text" placeholder="Mariana Alonsa" required></label>
+          <label>Nombre Cliente <input type="text"  name="nom_cliente" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" placeholder="Mariana Alonsa" required></label>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label>Correo Electronico <input type="text" placeholder="ej: pedrito@gmail.com"></label>
+          <label>Email <input type="text" name="email" placeholder="ej: pedrito@gmail.com" required></label>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label >Fecha <input type="date" required></label>
+          <label >Fecha <input type="date" name="fecha_atencion" required></label>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
           <label>Categoría
-            <select>
-              <option value="Seleccione">Seleccione</option>
-              <option value="Mantención">Mantencion</option>
-              <option value="Cambio de Pieza">Cambio de Pieza</option>
-              <option value="Limpieza">Limpieza</option>
+            <select  name="categoria" >
+              <option value="">Seleccione</option>
+              <option value="1">Mantencion</option>
+              <option value="2">Cambio de Pieza</option>
+              <option value="3">Limpieza</option>
             </select>
           </label>
         </div>
@@ -48,7 +50,7 @@
           <label>Descripción
         </div>
         <div class="col-75">
-          <textarea name="" class="form-control" cols="30" rows="10"></textarea>
+          <textarea id="descripcion" name="descripcion" class="form-control" cols="30" rows="10" required></textarea>
           </label>
         </div>
         <div class="row">
@@ -56,17 +58,31 @@
             <label>Trabajo realizado</label>
           </div>
           <div class="col-75">
-            <input type="file">
+            <input type="file" id="archivo">
           </div>
         </div>
         <div>
-          <a href="../main"><button class="button-tabla-atenciones" id="black"> Volver </button></a>
-          <button type="reset" class="button-tabla-atenciones" id="red"> Borrar </button>
-          <button class="button-tabla-atenciones"id="green"> Enviar </button>
+          <button type="reset" class="button-tabla-atenciones" id="red"> Limpiar </button>
+          <button type="submit" class="button-tabla-atenciones"id="green"> Enviar </button>
         </div>
       </div>
       </form>
     </div>
+    {% if messages %}
+      <br>
+      <br>
+      <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+      <br>
+      {% endif %}
   </div>
+{% else %}
+  <h1>No tienes permisos para acceder a esta página</h1>
+{% endif %}
 </div>
 {% endblock %}

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'app/css/carrito/styles.css' %}">
 {% endblock %}
 {% block contenido %}
-<!--Carrito-->
+<!-- Carrito -->
 <main class="main-cart">
     <div class="bloque">
         <div class="atencion">
@@ -12,35 +12,28 @@
                 <h1>Carrito de Compras</h1>
             </header>
             <ul class="formato-carrito">
+                {% for item in itemcarritos %}
                 <li class="cart-list">
-                    <img src="{% static 'app/images/rueda.png' %}" id="img">Ruedas
-                    <br>  
-                    Valor:   $100.000 <button class="del-button"id="red">Eliminar</button>
+                    <img src="{{ item.producto.imagen.url }}" id="img">{{ item.producto.nombre }}
+                    <br>
+                    Cantidad: {{ item.cantidad }}
+                    <br>
+                    Valor: ${{ item.producto.precio }}
+                    <br>
+                    Total: ${{ item.precio }}
+                    <br>
+                    <a href="{% url 'eliminar_del_carrito' item.id %}"> <button class="del-button" id="red">Eliminar</button> </a>
                 </li>
-                <li class="cart-list">
-                    <img src="{% static 'app/images/suspension.png' %}" id="img">Suspensiones
-                    <br>  
-                    Valor:   $50.000 <button class="del-button"id="red">Eliminar</button>
-                </li>
-                <li class="cart-list">
-                    <img src="{% static 'app/images/frenos.png' %}" id="img">Frenos
-                    <br>  
-                    Valor:   $50.000 <button class="del-button"id="red">Eliminar</button>
-                </li>
-                <li class="cart-list">
-                    <img src="{% static 'app/images/turbo.png' %}" id="img">Turbo
-                    <br>  
-                    Valor:   $20.000 <button class="del-button"id="red">Eliminar</button>
-                </li>
-                </ul>
+                {% endfor %}
+            </ul>
             <div class="detalle-venta">
                 --Detalle--
                 <br>
-                Total a pagar: $*****
+                Total a pagar: ${{ carrito.precio_total}}
             </div>
             <div class="button-cart">
-                <a href="{% url 'main' %}"><button id="black"> Volver </button></a>
-                <button id="green"> Comprar </button>
+                <a href="{% url 'main' %}"><button id="black">Volver</button></a>
+                <button id="green">Comprar</button>
             </div>
         </div>
     </div>

@@ -16,24 +16,24 @@
         </div>
         <div class="form-group">
             <label for="pnombre">Nombre</label>
-            <input type="text" class="form-control" id="pnombre" name="pnombre" required minlength="3" maxlength="50">
+            <input type="text" class="form-control" id="pnombre" name="pnombre" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" required minlength="3" maxlength="50">
         </div>
         <div class="form-group">
             <label for="appaterno">Apellido Paterno</label>
-            <input type="text" class="form-control" id="appaterno" name="appaterno" required minlength="3" maxlength="50">
+            <input type="text" class="form-control" id="appaterno" name="appaterno" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" required minlength="3" maxlength="50">
         </div>
         <div class="form-group">
             <label for="apmaterno">Apellido Materno</label>
-            <input type="text" class="form-control" id="apmaterno" name="apmaterno" required minlength="3" maxlength="50">
+            <input type="text" class="form-control" id="apmaterno" name="apmaterno" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" required minlength="3" maxlength="50">
         </div>
         <div class="form-group">
             <label for="edad">Edad</label>
-            <input type="number" class="form-control" id="edad" name="edad" required min="18">
+            <input type="number" class="form-control" id="edad" name="edad" required min="18" max="70">
         </div>
         <div class="form-group">
             <label for="tipo_genero"> Género</label>
             <select class="form-control" id="tipo_genero" name="tipo_genero" required>
-                <option value="0">Seleccione</option>
+                <option value="">Seleccione</option>
                 <option value="1">Femenino</option>
                 <option value="2">Masculino</option>
                 <option value="3">Helicoptera</option>
@@ -60,11 +60,23 @@
             <button type="submit"class="btn btn-primary">Enviar</button>
         </div>
     </form>
-
+    <!-- Mensajes de éxito y error -->
+    {% if messages %}
+    <br>
+    <br>
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    {% endif %}
     <textarea id="carta" class="form-control" rows="10" readonly></textarea>
     <br>
     <br>
-    <a class="volver" href="../main">Volver atrás</a>
+    <a class="volver" href="../">Volver atrás</a>
 </div>
 {% endblock %}
 {% block js %}

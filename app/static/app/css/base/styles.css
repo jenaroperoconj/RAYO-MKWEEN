@@ -2,7 +2,7 @@ body{
     font-family: sans-serif;
     padding: 0;
     margin: 0;
-    color: #fff;
+    color: #ffffff;
 }
 nav{
     position: fixed;
@@ -44,23 +44,40 @@ nav ul li a{
     font-weight: bold;
 }
 
-#menu-search {
-    box-sizing: border-box;
-    margin: 20px;
-    background: none;
-    border: none;
-    outline: none;
-    max-width: 190px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 9999px;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    color: #fff;
-} 
-/*.link para animación en el menu*/
+/* Para el cerrar sesión */
+nav ul li {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(31, 31, 31, 0.9);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
 .link {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     font-size: 20px;
     padding: 0.5rem;
     position: relative;
@@ -71,21 +88,26 @@ nav ul li a{
     position: absolute;
     width: 100%;
     height: 5px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
     transform: scaleX(0);
-    transition: all 0.6s ease;       
-}
-
-.link::before {
+    transition: all 0.6s ease; 
     bottom: 0;
     left: 0;
+    color: #ffffff;     
 }
 
 .link:hover::before {
     transform: scaleX(1);
+    color: white;
 }
 
+.link:hover {
+    transform: scaleX(1);
+    color: #ffffff; 
+}
+
+/*Navbar responsivo*/
 @media screen and (max-width: 1300px) {
     nav input {
         display: none;
@@ -96,15 +118,17 @@ nav ul li a{
 }
 
 @media screen and (max-width: 750px) {
-    nav ul li a {
+    .link{
         top: 20px;
-        font-size: 10px;
+        font-size: 12px;
     }
     #img {
         width: 100px;
         height: 100px;
     }
 }
+
+/*Para botones en otras vistas*/
 #green {
     background-color: #009688;
     border-color: #009688;
@@ -117,7 +141,8 @@ nav ul li a{
     background-color: #333;
     border-color: #333;
 }
-/*Tabla responsive*/
+
+/*Se llama en el base para no repetir código*/
 @media screen and (min-width: 801px) {
     .tabla td {
     font-size: 15px;
@@ -131,10 +156,11 @@ nav ul li a{
     .tabla td {
     font-size: 8px;
     }
-.tabla th {
+    .tabla th {
     font-size: 8px;
     }
 }
+
 /*FOOTER*/
 .pie_pagina{
     width: 100%;
@@ -152,3 +178,4 @@ nav ul li a{
     color: #fff;
     content: "";  
 }
+
