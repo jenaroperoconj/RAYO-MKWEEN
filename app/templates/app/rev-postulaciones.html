@@ -12,6 +12,7 @@
             <input id="id-search"  type="number" placeholder="Ingrese ID" minlength="4"></label>
         <button class="button-tabla-atenciones" id="search-button"> Buscar </button>
         <div class="tabla_atencion">
+            {% if postulaciones %}
             <div class="tabla table-responsive">
                 <table class="table table-border">
                     <thead>
@@ -48,6 +49,9 @@
                     </tbody>
                 </table>
             </div>
+            {% else %}
+            <h3>No hay postulaciones.</h3>
+            {% endif %}
         </div>
         <div class="boton">
             <a href="{% url 'main' %}"><button class="button-tabla-atenciones" id="gray"> Volver </button></a>

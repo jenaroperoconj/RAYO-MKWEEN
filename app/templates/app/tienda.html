@@ -8,9 +8,8 @@
 
 {% block contenido %}
 <div class="bloque">
-        <h1>Mas Comprados</h1>
+        <h1>Más Comprados</h1>
     <main>
-
         <div class="carousel">
             <div class="carousel-container">
                 <div class="carousel-slide">
@@ -19,7 +18,7 @@
                     </div>
                     <div class="texto">
                         <h2>Articulos</h2>
-                        <p>{% lorem 1s %}</p>   
+                        <p>{% lorem 3 %}</p>   
                     </div> 
                 </div>
                 <div class="carousel-slide">
@@ -28,7 +27,7 @@
                     </div>
                     <div class="texto">
                         <h2>Articulos</h2>
-                        <p>{% lorem 1s %}</p>   
+                        <p>{% lorem 3 %}</p>   
                     </div>  
                 </div>
                 <div class="carousel-slide">
@@ -37,7 +36,7 @@
                     </div>
                     <div class="texto">
                         <h2>Articulos</h2>
-                        <p>{% lorem 1s %}</p>   
+                        <p>{% lorem 3 %}</p>   
                     </div>                    
                 </div>
             </div>
@@ -49,109 +48,57 @@
 
         <div class="filtro">
             <div>
-                    <br>
-                    <br>
-                    <input class="input" placeholder="Buscar">
-                    <ul class="">Ruedas</ul>
-                    <ul class="">Suspensiones</ul>
-                    <ul class="">Turbos</ul>
-                    <ul class="">Frenos</ul>
-                        <div class="carrito">
-                            <table>
-                                <tr>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col">Cantidad</th>
-                                    <th scope="col">Añadir</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Producto</th>
-                                    <th scope="col">9999</th>
-                                    <th scope="col">1</th>
-                                    <th scope="col"></th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Producto</th>
-                                    <th scope="col">9999</th>
-                                    <th scope="col">1</th>
-                                    <th scope="col"><a href=""><button class="button-tabla-atenciones" id="green"> + </button></a><a href=""><button class="button-tabla-atenciones" id="red"> - </button></a></th>
-                                </tr>
-                            </table>
-                        </div>
+                <br>
+                <br>
+                <input class="input" placeholder="Buscar">
+                <ul class="">Ruedas</ul>
+                <ul class="">Suspensiones</ul>
+                <ul class="">Turbos</ul>
+                <ul class="">Frenos</ul>
+                <div class="carrito">
+                    <table>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Añadir</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">9999</th>
+                            <th scope="col">1</th>
+                            <th scope="col"></th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">9999</th>
+                            <th scope="col">1</th>
+                            <th scope="col"><a href=""><button class="button-tabla-atenciones" id="green"> + </button></a><a href=""><button class="button-tabla-atenciones" id="red"> - </button></a></th>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
         
         <section class="products">
-            <div class="product" data-category="electronics">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$499</p>
+        {% if productos %}
+            {% for producto in productos %}
+                <div class="product" data-category="{{ producto.get_categoria_prod_display }}">
+                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                    <h2>{{ producto.nombre }}</h2>
+                    <p>${{ producto.precio }}</p>
+                    <a href=""><button class="button-tabla-atenciones" id="green"> Agregar Al Carrito </button></a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>No hay productos disponibles.</h3>
+        {% endif %}
+            <a href="{% url 'test' %}">
+            <div class="product">
+                <img src="{% static 'app/images/+.png'%}" alt="Agregar-producto">
+                <h2>Añadir Producto</h2>
             </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/rueda.png' %}" alt="">
-                <h2>Rueda</h2>
-                <p>$19</p>
-            </div>
-            <div class="product" data-category="electronics">
-                <img src="{% static 'app/images/turbo.png' %}" alt="">
-                <h2>Turbo</h2>
-                <p>$799</p>
-            </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/suspension.png' %}" alt="">
-                <h2>suspension</h2>
-                <p>$49</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$899</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/rueda.png' %}" alt="">
-                <h2>Rueda</h2>
-                <p>$29</p>
-            </div>
-            <div class="product" data-category="electronics">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$499</p>
-            </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/rueda.png' %}" alt="">
-                <h2>Rueda</h2>
-                <p>$19</p>
-            </div>
-            <div class="product" data-category="electronics">
-                <img src="{% static 'app/images/turbo.png' %}" alt="">
-                <h2>Turbo</h2>
-                <p>$799</p>
-            </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/suspension.png' %}" alt="">
-                <h2>suspension</h2>
-                <p>$49</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$899</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/rueda.png' %}" alt="">
-                <h2>Rueda</h2>
-                <p>$29</p>
-            </div>
-            <div class="product" data-category="clothing">
-                <img src="{% static 'app/images/suspension.png' %}" alt="">
-                <h2>suspension</h2>
-                <p>$49</p>
-            </div>
-            <div class="product" data-category="home">
-                <img src="{% static 'app/images/frenos.png' %}" alt="">
-                <h2>Frenos</h2>
-                <p>$899</p>
-            </div>
+            </a>
         </section>
     </main>
 <script>    
@@ -169,10 +116,8 @@
         showSlide(slideIndex += n);
     }
     
-    // Mostrar el primer slide al cargar la página
     showSlide(slideIndex);
 </script>
-
 
 </div>
 

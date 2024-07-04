@@ -118,9 +118,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "app/static",
-]
+STATICFILES_DIRS = [BASE_DIR / "app/static"]
+
+# Configuración de archivos subidos
+MEDIA_ROOT = BASE_DIR / 'media'  # Directorio donde se almacenarán los archivos subidos
+MEDIA_URL = '/media/'  # URL pública para acceder a los archivos subidos
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

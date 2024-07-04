@@ -32,11 +32,11 @@
         </div>
         <div class="form-group">
             <label for="tipo_genero"> Género</label>
-            <select class="form-control" id="tipo_genero" name="tipo_genero" value="{{postulaciones.tipo_genero}}" required>
-                <option value="0">Seleccione</option>
-                <option value="1">Femenino</option>
-                <option value="2">Masculino</option>
-                <option value="3">Helicoptera</option>
+            <select class="form-control" id="tipo_genero" name="tipo_genero" required>
+                <option value="0" {% if postulaciones.tipo_genero == 0 %}selected{% endif %}>Seleccione</option>
+                <option value="1" {% if postulaciones.tipo_genero == 1 %}selected{% endif %}>Femenino</option>
+                <option value="2" {% if postulaciones.tipo_genero == 2 %}selected{% endif %}>Masculino</option>
+                <option value="3" {% if postulaciones.tipo_genero == 3 %}selected{% endif %}>Helicoptera</option>
             </select>
         </div>
         <div class="form-group">
@@ -53,7 +53,7 @@
         </div>
         <div class="form-group">
             <label for="motivo">Por qué quieres trabajar con nosotros?</label>
-            <textarea rows="5" class="form-control" id="motivo" name="motivo" value="{{postulaciones.motivo}}" required></textarea>
+            <textarea rows="5" class="form-control" id="motivo" name="motivo" required>{{ postulaciones.motivo }}</textarea>
         </div>
         <div class="form-group">
             <button type="submit"class="btn btn-primary" id="green">Actualizar</button>

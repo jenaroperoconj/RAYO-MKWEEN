@@ -13,6 +13,7 @@
         <button class="button-tabla-atenciones" id="search-button"> Buscar </button>
         <div class="tabla_atencion">
             <div class="tabla table-responsive">
+                {% if atenciones %}
                 <table class="table table-border">
                     <thead>
                         <tr>
@@ -35,12 +36,15 @@
                             <td>{{ x.fecha_atencion }}</td>
                             <td>{{ x.get_categoria_display }}</td>
                             <td>{{ x.descripcion }}</td>
-                            <td><a href=""><button class="button-tabla-atenciones" id="green"> Actualizar </button></a></td>
+                            <td><a href="{% url 'actualizaratencion' x.id_atencion %}"><button class="button-tabla-atenciones" id="green"> Actualizar </button></a></td>
                             <td><a href="{% url 'eliminaratencion' x.id_atencion %}"><button class="button-tabla-atenciones" id="red"> Eliminar </button></a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+                {% else %}
+                <h3>No hay historial de atenciones.</h3>
+                {% endif %}
             </div>
         </div>
         <div class="boton">
