@@ -1,0 +1,70 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/main/styles.css' %}">
+{% endblock %}
+{% block contenido %}
+<!--El section es para separar-->
+<section></section>
+<div class="seccion">
+<h1>Últimos Trabajos</h1>
+</div>
+<!--Carrusel-->
+<div class="carousel">
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img class="lazyload" src="{% static 'app/images/batimovil.jpg' %}" data-src="{% static 'app/images/batimovil.jpg' %}" alt="Slide 1">
+            <div class="overlay">
+                <h1>Batimovil</h1>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img class="lazyload" src="{% static 'app/images/el_sheriff_car.jpeg' %}" data-src="{% static 'app/images/el_sheriff_car.jpeg' %}"  alt="Slide 2">
+            <div class="overlay">
+                <h1>Sheriff Car</h1>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img class="lazyload" src="{% static 'app/images/jackson_storm_car.jpg' %}" data-src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Slide 3">
+            <div class="overlay">
+                <h1>Jackson Storm Car</h1>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img class="lazyload" src="{% static 'app/images/lambo.jpg' %}" data-src="{% static 'app/images/lambo.jpg' %}" alt="Slide 4">
+            <div class="overlay">
+                <h1>Lamborghini</h1>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img class="lazyload" src="{% static 'app/images/mcweencar.jpg' %}" data-src="{% static 'app/images/mcweencar.jpg' %}" alt="Slide 5">
+            <div class="overlay">
+                <h1>McQueen</h1>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img class="lazyload" src="{% static 'app/images/mcweencar2jpeg.jpg' %}" data-src="{% static 'app/images/mcweencar2jpeg.jpg' %}"  alt="Slide 6">
+            <div class="overlay">
+                <h1>Porsche 911</h1>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img class="lazyload" src="{% static 'app/images/warthog.png' %}" data-src="{% static 'app/images/warthog.png' %}" alt="Slide 7">
+            <div class="overlay">
+                <h1>Warthog Fortnite</h1>
+            </div>
+        </div>
+    </div>
+    <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+    <a class="next" onclick="moveSlide(1)">&#10095;</a>
+</div>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{% static 'app/js/main/carrusel.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,86 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: url('../../images/tools.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.bloque{
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 110px;
+    padding-bottom: 10px !important;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.button-tabla-atenciones{
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #505050;
+    border-color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bloque input{
+    border-radius: 10px;
+    color: rgb(77, 28, 28);
+    font-size: 15px;
+    font-weight: bold;  
+    display: flex; 
+}
+
+/*carrito.html*/
+header {
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Atencion */
+.atenciones {
+    background-color: rgba(31, 31, 31, 0.6);
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    color: #fff;
+    min-width: 430px;
+    border-radius: 10px;
+    width: 50%;
+    height: 100%;
+    padding: 0 50px 50px 50px;
+    justify-content: center;
+}
+
+.formulario-atenciones{
+    color: rgba(31, 31, 31, 0.6);
+    background-color: #ddd;
+    width: 100%;
+    height: auto; 
+    border-radius: 10px;   
+    margin-bottom: 20px;
+    display: flex;
+    padding: 50px 0px 50px 0px;
+    justify-content: center;
+}
+
+.formulario-atenciones div{
+    padding-top: 5px;
+    text-align: left;
+}
+
+.formulario-atenciones textarea{     
+    min-width: 100%;     
+    resize: vertical;     
+    min-height: 100px;     
+    max-height: 200px;     
+    font-family: sans-serif; 
+}

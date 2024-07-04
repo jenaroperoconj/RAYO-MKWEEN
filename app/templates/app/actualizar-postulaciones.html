@@ -1,0 +1,63 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'app/css/formulario/styles.css' %}">
+{% endblock %}
+{% block contenido %}
+<div class="container" style="padding: 110px 0">
+    <h1 class="text-center">Actualizar Postulación</h1>
+    
+    <form id= "formulario" action="{% url 'editarpostulante' postulaciones.rut %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="rut">RUT</label>
+            <input type="text" class="form-control" id="rut" name="rut" value="{{postulaciones.rut}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="pnombre">Nombre</label>
+            <input type="text" class="form-control" id="pnombre" name="pnombre" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" value="{{postulaciones.pnombre}}" required minlength="3" maxlength="50">
+        </div>
+        <div class="form-group">
+            <label for="appaterno">Apellido Paterno</label>
+            <input type="text" class="form-control" id="appaterno" name="appaterno" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" value="{{postulaciones.appaterno}}" required minlength="3" maxlength="50">
+        </div>
+        <div class="form-group">
+            <label for="apmaterno">Apellido Materno</label>
+            <input type="text" class="form-control" id="apmaterno" name="apmaterno" pattern="[A-Za-z\s]+" title="El nombre no debe contener números" value="{{postulaciones.apmaterno}}" required minlength="3" maxlength="50">
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad" name="edad" value="{{postulaciones.edad}}" required min="18" max="70">
+        </div>
+        <div class="form-group">
+            <label for="tipo_genero"> Género</label>
+            <select class="form-control" id="tipo_genero" name="tipo_genero" required>
+                <option value="" {% if postulaciones.tipo_genero == 0 %}selected{% endif %}>Seleccione</option>
+                <option value="1" {% if postulaciones.tipo_genero == 1 %}selected{% endif %}>Femenino</option>
+                <option value="2" {% if postulaciones.tipo_genero == 2 %}selected{% endif %}>Masculino</option>
+                <option value="3" {% if postulaciones.tipo_genero == 3 %}selected{% endif %}>Helicoptera</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{postulaciones.email}}" required>
+        </div>
+        <div class="form-group">
+            <label for="celular">Celular</label><br><br>
+            <input type="number" class="form-control" id="celular" name="celular" value="{{postulaciones.celular}}" required minlength="9" maxlength="12">
+        </div>
+        <div class="form-group">
+            <label for="especializacion">Especialización</label>
+            <input type="text" class="form-control" id="especializacion" name="especializacion" value="{{postulaciones.especializacion}}" required>
+        </div>
+        <div class="form-group">
+            <label for="motivo">Por qué quieres trabajar con nosotros?</label>
+            <textarea rows="5" class="form-control" id="motivo" name="motivo" required>{{ postulaciones.motivo }}</textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit"class="btn btn-primary" id="green">Actualizar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

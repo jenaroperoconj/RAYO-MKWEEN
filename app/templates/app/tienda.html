@@ -1,0 +1,163 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/tienda/styles.css' %}">
+{% endblock %}
+
+{% block contenido %}
+<div class="bloque">
+        <h1>Más Comprados</h1>
+    <main>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <div>
+                        <img class="lazyload" src="{% static 'app/images/jackson_storm_car.jpg' %}" data-src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 3 %}</p>   
+                    </div> 
+                </div>
+                <div class="carousel-slide">
+                    <div>
+                        <img class="lazyload" src="{% static 'app/images/jackson_storm_car.jpg' %}" data-src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 3 %}</p>   
+                    </div>  
+                </div>
+                <div class="carousel-slide">
+                    <div>
+                        <img class="lazyload" src="{% static 'app/images/jackson_storm_car.jpg' %}" data-src="{% static 'app/images/jackson_storm_car.jpg' %}"  alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 3 %}</p>   
+                    </div>                    
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <h1>Tienda Online</h1>
+
+        <div class="filtro">
+            <div>
+                <br>
+                <br>
+                <form method="GET">
+                <input type="text"class="input" placeholder="Buscar" name="buscar" value="">
+                <button type="submit">Buscar</button>
+                </form>
+                <ul class="">Ruedas</ul>
+                <ul class="">Suspensiones</ul>
+                <ul class="">Turbos</ul>
+                <ul class="">Frenos</ul>
+                <div class="carrito">
+                    <table>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">.</th>
+                        </tr>
+                        {% for item in itemcarritos %}
+                        <tr>
+                            <td>{{ item.producto.nombre }}</td>
+                            <td>${{ item.producto.precio }}</td>
+                            <td>{{ item.cantidad }}</td>
+                            <td>
+                                <form action="{% url 'agregaralcarrito' %}" method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id_producto" value="{{ item.producto.id_producto }}">
+                                    <button type="submit" tabindex="0" class="plusButton">
+                                    <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                        <g mask="url(#mask0_21_345)">
+                                        <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+                                        </g>
+                                    </svg>
+                                    </button>
+                                </form>
+                                <form action="{% url 'quitar_del_carrito' %}" method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id_producto" value="{{ item.producto.id_producto }}">
+                                    <button type="submit" tabindex="0" class="plusButton">
+                                    <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                        <g mask="url(#mask0_21_345)">
+                                        <path d="M6.25 13.75H23.75V16.25H6.25V13.75Z"></path>
+                                        </g>
+                                    </svg>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <section class="products">
+        {% if productos %}
+            {% for producto in productos %}
+                <div class="product" data-category="{{ producto.get_categoria_prod_display }}">
+                    <img class="lazyload" src="{{ producto.imagen.url }}" data-src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                    <h2>{{ producto.nombre }}</h2>
+                    <p>${{ producto.precio }}</p>
+                    <form action="{% url 'agregaralcarrito' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="id_producto" value="{{ producto.id_producto }}">
+                        <button class="transparent" type="submit">
+                            <div class="button">
+                                <div class="button-wrapper">
+                                    <div class="text">Añadir
+                                    </div>
+                                    <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                                    </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>No hay productos disponibles.</h3>
+        {% endif %}
+            {% if user.is_superuser %}
+            <a href="{% url 'test' %}">
+            <div class="agregar-prod">
+                <img class="lazyload" src="{% static 'app/images/+.png'%}" data-src="{% static 'app/images/+.png'%}" alt="Agregar-producto">
+            </div>
+            </a>
+            {% endif %}
+        </section>
+    </main>
+<script>    
+    let slideIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (index >= slides.length) slideIndex = 0;
+        if (index < 0) slideIndex = slides.length - 1;
+        const offset = -slideIndex * 100;
+        document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
+    }
+    
+    function moveSlide(n) {
+        showSlide(slideIndex += n);
+    }
+    
+    showSlide(slideIndex);
+</script>
+
+</div>
+
+{% endblock %}
