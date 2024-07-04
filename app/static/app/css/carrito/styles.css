@@ -4,18 +4,18 @@ body{
     margin: 0;
     font-family: sans-serif;
     background: url(../../images/tools.jpg);
-    color: #ffffff;
+    color: #fff;
 }
 
 h1{
-    color: #ffffff;
+    color: #fff;
     background-color: #333;
     padding: 20px;
 }
 
 .main-cart{
     text-align: center;
-    padding: 10px 0;
+    padding-top: 110px;
     font-size: 20px;
     padding-bottom: 0;
 }

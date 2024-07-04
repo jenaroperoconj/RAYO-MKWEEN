@@ -7,7 +7,8 @@ nav{
     padding: 10px;
     box-sizing: border-box;
     background: rgba(31, 31, 31, 0.6);
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #333;
+    z-index: 1000; /*Para asegurar que se ponga en la parte superior*/
 }
 
 nav .logo{
@@ -138,6 +139,7 @@ nav ul li a{
     padding-top: 10px;
     color: #fff;
     line-height: 30px;
+    margin-top: auto;
 }
 
 .pie_pagina a{
