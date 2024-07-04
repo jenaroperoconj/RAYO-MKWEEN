@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabaja con nosotros</title>
-    {% load static %}
+{% extends "app/base/base.html" %}
+{% load static %}
+{% block contenido %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'app/css/formulario/styles.css' %}">
-</head>
-<body>
-
-    <nav>  
-        <div class="logo">
-        <a href="../main">
-        <img src="{% static 'app/images/rayo_logo.png' %}" href="../" alt="Rayo Logo">
-        </a>
-    </div>
-        <ul>			
-            <li><a href="../atenciones/atenciones.html" class="link">Generar Atencion</a></li>
-            <li><a href="../rev-atenciones/rev.atenciones.html" class="link">Revisar atenciones</a></li>
-            <li><a href="../carrito" class="link">Carrito de compras</a></li>
-            <input placeholder="Buscar" class="input" name="text" type="text">
-            <li><a href="../login" class="link">Cerrar Sesion</a></li>           
-        </ul>
-    </nav>
-
-
     <div class="container">
         <h1 class="text-center">Postulación para Mecánico en Taller Rayo McQueen</h1>
         
@@ -106,23 +83,6 @@
         <br>
         <a class="volver" href="../main">Volver atrás</a>
     </div>
-
-    <!--Pie de la página (Datos contacto)-->
-    <div class="pie" id="footermain">
-        <footer class="pie_pagina">
-            <div>
-                Número de contacto: 9 2134 8199
-                <br>
-                <a href="mailto:jen.marin@duocuc.cl" download>Contactanos Vía E-mail</a>
-                <br>
-                <a href="https://maps.app.goo.gl/UeDyFPCjS79GM8bQ6" target="_blank" >Revisa Nuestra Ubicación!</a>
-                <br>
-                &copy; 2024 Trabaja con nosotros, Taller Mecánico Rayo Mkween
-            </div>
-        </footer>
-    </div>
-
     <script src="{% static 'app/js/trabajaConNosotros/script.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
-</html>
+{% endblock %}

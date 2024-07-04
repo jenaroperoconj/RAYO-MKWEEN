@@ -5,7 +5,6 @@ body{
     font-family: sans-serif;
     background: url('../../images/tools.jpg');
 }
-
 /*Revisiones Atenciones*/
 .bloque{
     width: 100%;
@@ -35,6 +34,7 @@ body{
     display: flex; 
 }
 
+/*carrito.html*/
 header {
     background-color: rgb(77, 28, 28);
     color: #fffe;

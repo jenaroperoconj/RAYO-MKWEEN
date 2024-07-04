@@ -37,7 +37,8 @@ nav ul li a{
     font-weight: bold;
 }
 
-input {
+#menu-search {
+    box-sizing: border-box;
     margin: 20px;
     background: none;
     border: none;
