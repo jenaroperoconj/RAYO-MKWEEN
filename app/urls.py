@@ -1,10 +1,10 @@
 from django.urls import path
 from . import views
 
+from django.urls import path, include
+
 urlpatterns = [
-    path('', views.login, name="login"),
-    path('index/', views.index, name='index'),
-    path('main/', views.main, name="main"),
+    path('', views.main, name="main"),
     path('atenciones/', views.atenciones, name="atenciones"),
     path('carrito/', views.carrito, name="carrito"),
     path('rev-postulaciones/', views.rev_postulaciones, name="rev_postulaciones"),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('actualizar-producto/<int:id_producto>/', views.actualizar_producto, name="actualizarproducto"),
     path('editar-producto/<int:id_producto>/', views.editar_producto, name="editarproducto"),
     path('test/', views.test, name="test"),
+    
 ]

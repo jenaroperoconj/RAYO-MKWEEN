@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Iniciar Sesión</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/login/styles.css' %}">
+</head>
+<body>
+
+    {% load crispy_forms_tags %}
+
+    <div class="container text-center mt-5">
+        <img src="{% static 'app/images/rayo_logo.png' %}" alt="Rayo Logo" class="img-fluid rounded-circle">
+    </div>
+
+    <div class="col-12 col-md-6 offset-md-3">
+            <div class="container session-container">
+                <h1>Iniciar Sesión</h1>
+                <br>
+                <form class="session" action="" method="POST">
+                    <br>
+                    <br>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input type="submit" value="Ingresar" class="btn ">
+                </form>
+            </div>
+    </div>
+    
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            Leer <a href="#">Política de Privacidad</a>
+            <br>
+            &copy; 2024 Inicio de Sesión, Taller Mecánico Rayo Mkween
+        </div>
+    </footer>
+</body>
+</html>

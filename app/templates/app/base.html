@@ -26,7 +26,12 @@
         <li><a href="{% url 'rev_atenciones' %}" class="link">Revisar Atenciones</a></li>
         <li><a href="{% url 'rev_postulaciones' %}" class="link">Revisar Postulaciones</a></li>
         <li><a href="{% url 'carrito' %}" class="link">Mi Carrito</a></li>
-        <li><a href="{% url 'login' %}" class="link" id="logout">Cerrar Sesión</a></li>           
+        {%  if user.is_authenticated  %}
+          <li><a href="{% url 'logout' %}" class="link" id="logout">Cerrar Sesión</a></li>  
+          <li><a href="#" class="link">{{user.username}}</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}" class="link" >Iniciar Sesión</a></li>     
+        {% endif %}      
     </ul>
 </nav>
 
