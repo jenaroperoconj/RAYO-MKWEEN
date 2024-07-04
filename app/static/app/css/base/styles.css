@@ -1,3 +1,9 @@
+body{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
 nav{
     position: fixed;
     top: 0;
@@ -8,7 +14,7 @@ nav{
     box-sizing: border-box;
     background: rgba(31, 31, 31, 0.6);
     border-bottom: 1px solid #333;
-    z-index: 1000; /*Para asegurar que se ponga en la parte superior*/
+    z-index: 1000;
 }
 
 nav .logo{

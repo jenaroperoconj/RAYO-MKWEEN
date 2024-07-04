@@ -1,10 +1,9 @@
 body{
-    background-color: rgb(100, 100, 100);
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    background: url(../../images/tools.jpg);
-    color: #fff;
+    background: url(../../images/tools.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
 }
 
 h1{

@@ -1,8 +1,9 @@
 body{
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    background: url('../../images/tools.jpg');
+    background: url('../../images/tools.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
 }
 /*Revisiones Atenciones*/
 .bloque{
@@ -18,7 +19,6 @@ body{
     width: auto;
     height: 30px;
     border-radius: 10px;
-    color: #fff;
     background-color: #505050;
     border-color: #fff;
     font-size: 15px;
@@ -44,7 +44,6 @@ body{
 }
 
 .atencion{
-    color: #fff;
     background-color: rgb(33 3 3 / 72%);
     min-width: 430px;
     width: 80%;

@@ -1,10 +1,6 @@
 body{
-    color: #fff;
     background: url('../../images/main-background.jpg') no-repeat center center fixed;
     overflow-x: hidden;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
     background-size: cover;
     background-position: center;
     width: 100%;
