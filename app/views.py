@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .models import postulacion, atencion, producto, carrito, itemcarrito
 from django.contrib import messages
@@ -129,7 +130,16 @@ def editar_postulante(request,rut):
 
 @login_required
 def rev_atenciones(request):
+    busqueda = request.GET.get("buscar")
     atenciones = atencion.objects.all()
+    if busqueda:
+        atenciones = atenciones.filter(Q(nom_mecanico__icontains=busqueda) |
+        Q(nom_cliente__icontains = busqueda) |
+        Q(email__icontains = busqueda) |
+        Q(fecha_atencion__icontains = busqueda) |
+        Q(descripcion__icontains = busqueda) |
+        Q(categoria__icontains = busqueda)
+        ).distinct()
 
     context = {
         'atenciones' :atenciones
@@ -198,9 +208,14 @@ def editar_atencion(request,id_atencion):
     atenciones.descripcion = descripcion
     atenciones.save()
     return redirect("rev_atenciones")
+    
 @login_required
 def tienda(request):
+    busqueda = request.GET.get("buscar")
     productos = producto.objects.all()
+
+    if busqueda:
+        productos = productos.filter(nombre__icontains=busqueda)
 
     # Obtener el carrito del usuario actual
     user_carrito, created = carrito.objects.get_or_create(user=request.user, completado=False)
