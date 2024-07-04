@@ -1,5 +1,5 @@
 body{
-    background: url(../../images/tools.jpg) no-repeat center center fixed;
+    background: url('../../images/tools.jpg') no-repeat center center fixed;
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -19,9 +19,13 @@ h1{
     padding-bottom: 0;
 }
 .cart-list{
+    background-color: #6363637e;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
     padding-bottom:20px 20px;
     margin-bottom: 20px;
-    background-color:#0004;
     display: flex;
     justify-content: space-between;
     align-items: center;

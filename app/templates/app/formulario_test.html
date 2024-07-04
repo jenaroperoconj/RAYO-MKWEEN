@@ -1,4 +1,4 @@
-{% extends "app/base/base.html" %}
+{% extends "app/base.html" %}
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -27,10 +27,6 @@
             <input type="text" class="form-control" id="apmaterno" name="apmaterno" required minlength="3" maxlength="50">
         </div>
         <div class="form-group">
-            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
-        </div>
-        <div class="form-group">
             <label for="edad">Edad</label>
             <input type="number" class="form-control" id="edad" name="edad" required min="18">
         </div>
@@ -40,7 +36,7 @@
                 <option value="0">Seleccione</option>
                 <option value="1">Femenino</option>
                 <option value="2">Masculino</option>
-                <option value="3">39 tipos de gay</option>
+                <option value="3">Helicoptera</option>
             </select>
         </div>
         <div class="form-group">
@@ -72,4 +68,5 @@
 </div>
 {% endblock %}
 {% block js %}
+<script type="text/javascript" src="{% static 'app/js/trabajaConNosotros/crearCarta.js' %}"></script>
 {% endblock %}

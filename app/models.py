@@ -5,16 +5,14 @@ opciones_genero = [
     [0,"Seleccione"],
     [1,"Femenino"],
     [2,"Masculino"],
-    [3,"39 tipos de gay"],
+    [3,"Helicoptera"],
 ]
-
 
 class postulacion(models.Model):
     rut = models.CharField(primary_key=True, max_length=10)
     pnombre = models.CharField(max_length=50)
     appaterno = models.CharField(max_length=50)
     apmaterno = models.CharField(max_length=50)
-    fecha_nacimiento = models.DateField(null=False)
     edad = models.IntegerField()
     tipo_genero = models.IntegerField(choices=opciones_genero, default=0)
     email = models.EmailField(max_length=100, blank=True, null=False)
@@ -24,3 +22,21 @@ class postulacion(models.Model):
 
     def __str__(self):
         return str(self.rut)
+
+categoria_opc = [
+    [0,"Seleccione"],
+    [1,"Mantención"],
+    [2,"Cambio de pieza"],
+    [3,"Limpieza"],
+]
+class atencion(models.Model):
+    id_atencion = models.AutoField(db_column='id_atencion', primary_key=True)
+    nom_mecanico = models.CharField(max_length=50)
+    nom_cliente = models.CharField(max_length=50)
+    email = models.EmailField(max_length=100, blank=True, null=False)
+    fecha_atencion = models.DateField()
+    categoria = models.IntegerField(choices=categoria_opc, default=0)
+    descripcion = models.TextField()
+
+    def __str__(self):
+        return str(self.id_atencion)

@@ -1,0 +1,179 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/tienda/styles.css' %}">
+{% endblock %}
+
+{% block contenido %}
+<div class="bloque">
+        <h1>Mas Comprados</h1>
+    <main>
+
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <div>
+                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 1s %}</p>   
+                    </div> 
+                </div>
+                <div class="carousel-slide">
+                    <div>
+                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 1s %}</p>   
+                    </div>  
+                </div>
+                <div class="carousel-slide">
+                    <div>
+                        <img src="{% static 'app/images/jackson_storm_car.jpg' %}" alt="Imagen 3">  
+                    </div>
+                    <div class="texto">
+                        <h2>Articulos</h2>
+                        <p>{% lorem 1s %}</p>   
+                    </div>                    
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <h1>Tienda Online</h1>
+
+        <div class="filtro">
+            <div>
+                    <br>
+                    <br>
+                    <input class="input" placeholder="Buscar">
+                    <ul class="">Ruedas</ul>
+                    <ul class="">Suspensiones</ul>
+                    <ul class="">Turbos</ul>
+                    <ul class="">Frenos</ul>
+                        <div class="carrito">
+                            <table>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Añadir</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">9999</th>
+                                    <th scope="col">1</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">9999</th>
+                                    <th scope="col">1</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </table>
+                        </div>
+            </div>
+        </div>
+        
+        <section class="products">
+            <div class="product" data-category="electronics">
+                <img src="{% static 'app/images/frenos.png' %}" alt="">
+                <h2>Frenos</h2>
+                <p>$499</p>
+            </div>
+            <div class="product" data-category="clothing">
+                <img src="{% static 'app/images/rueda.png' %}" alt="">
+                <h2>Rueda</h2>
+                <p>$19</p>
+            </div>
+            <div class="product" data-category="electronics">
+                <img src="{% static 'app/images/turbo.png' %}" alt="">
+                <h2>Turbo</h2>
+                <p>$799</p>
+            </div>
+            <div class="product" data-category="clothing">
+                <img src="{% static 'app/images/suspension.png' %}" alt="">
+                <h2>suspension</h2>
+                <p>$49</p>
+            </div>
+            <div class="product" data-category="home">
+                <img src="{% static 'app/images/frenos.png' %}" alt="">
+                <h2>Frenos</h2>
+                <p>$899</p>
+            </div>
+            <div class="product" data-category="home">
+                <img src="{% static 'app/images/rueda.png' %}" alt="">
+                <h2>Rueda</h2>
+                <p>$29</p>
+            </div>
+            <div class="product" data-category="electronics">
+                <img src="{% static 'app/images/frenos.png' %}" alt="">
+                <h2>Frenos</h2>
+                <p>$499</p>
+            </div>
+            <div class="product" data-category="clothing">
+                <img src="{% static 'app/images/rueda.png' %}" alt="">
+                <h2>Rueda</h2>
+                <p>$19</p>
+            </div>
+            <div class="product" data-category="electronics">
+                <img src="{% static 'app/images/turbo.png' %}" alt="">
+                <h2>Turbo</h2>
+                <p>$799</p>
+            </div>
+            <div class="product" data-category="clothing">
+                <img src="{% static 'app/images/suspension.png' %}" alt="">
+                <h2>suspension</h2>
+                <p>$49</p>
+            </div>
+            <div class="product" data-category="home">
+                <img src="{% static 'app/images/frenos.png' %}" alt="">
+                <h2>Frenos</h2>
+                <p>$899</p>
+            </div>
+            <div class="product" data-category="home">
+                <img src="{% static 'app/images/rueda.png' %}" alt="">
+                <h2>Rueda</h2>
+                <p>$29</p>
+            </div>
+            <div class="product" data-category="clothing">
+                <img src="{% static 'app/images/suspension.png' %}" alt="">
+                <h2>suspension</h2>
+                <p>$49</p>
+            </div>
+            <div class="product" data-category="home">
+                <img src="{% static 'app/images/frenos.png' %}" alt="">
+                <h2>Frenos</h2>
+                <p>$899</p>
+            </div>
+        </section>
+    </main>
+<script>    
+    let slideIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (index >= slides.length) slideIndex = 0;
+        if (index < 0) slideIndex = slides.length - 1;
+        const offset = -slideIndex * 100;
+        document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
+    }
+    
+    function moveSlide(n) {
+        showSlide(slideIndex += n);
+    }
+    
+    // Mostrar el primer slide al cargar la página
+    showSlide(slideIndex);
+</script>
+
+
+</div>
+
+{% endblock %}
